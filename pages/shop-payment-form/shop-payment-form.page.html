@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start" >
+          <ion-back-button text="" icon="arrow-back"></ion-back-button>
+      </ion-buttons>
+      <ion-title >payment</ion-title>
+
+
+
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content padding>
+
+
+  <ion-list class="form">
+
+    <ion-text color="danger">
+      <p>โอน/ชำระผ่านช่องทางธนาคาร</p>
+    </ion-text>
+
+   
+   
+    <ion-item>
+      <ion-label>ธนาคาร</ion-label>
+      <ion-select name="bank" [(ngModel)]="bank">
+        <ion-select-option value="ไทยพาณิชย์">ไทยพาณิชย์</ion-select-option>
+        <ion-select-option value="กรุงเทพ">กรุงเทพ</ion-select-option>
+        <ion-select-option value="กรุงไทย">กรุงไทย</ion-select-option>
+        <ion-select-option value="กรงศรี">กรุงศรี</ion-select-option>
+        <ion-select-option value="ออมสิน">ออมสิน</ion-select-option>
+        <ion-select-option value="กสิกรไทย">กสิกรไทย</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating" color="medium" >เลขบัญชีธนาคาร</ion-label>
+        <ion-input name="account_number" type="tel" [(ngModel)]="account_number"></ion-input>
+      </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="medium" >ชื่อ</ion-label>
+      <ion-input name="account_name" type="text" [(ngModel)]="account_name"></ion-input>
+    </ion-item>
+
+
+
+
+    <ion-text color="danger">
+        <p>พร้อมเพย์</p>
+      </ion-text>
+      <ion-item>
+          <ion-label position="floating" color="medium" >เลขพร้อมเพย์</ion-label>
+          <ion-input name="PromptPay" type="tel" [(ngModel)]="PromptPay"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating" color="medium" >ชื่อพร้อมเพย์</ion-label>
+            <ion-input name="PromptPay_name" type="taxt" [(ngModel)]="PromptPay_name"></ion-input>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-checkbox color="primary" slot="start" name="Cash_on_Delivery" [(ngModel)]="Cash_on_Delivery"></ion-checkbox>
+            <ion-label>เก็บเงินปลายทาง</ion-label>
+          </ion-item>
+   </ion-list> 
+            
+                 <div text-center>
+                    <ion-button expand="block" type="submit" (click)="writeNewPost()">SAVE</ion-button>
+                 </div>
+ 
+                
+</ion-content>

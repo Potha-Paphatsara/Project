@@ -1,0 +1,54 @@
+<ion-header >
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button color="light" text="" icon="arrow-back"></ion-back-button>
+      </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="center-align-box">
+           
+        <ion-list>
+            <ion-item>
+                <ion-label position="floating" color="primary">Name</ion-label>
+                <ion-input name="user_fullname" type="text" spellcheck="false" [(ngModel)]="Name" required>
+                </ion-input>
+           </ion-item>
+
+            <ion-item>
+              <ion-label position="floating" color="primary">Email</ion-label>
+              <ion-input name="user_email" type="email" spellcheck="false" [(ngModel)]="Email" autocapitalize="off" required>
+              </ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating" color="primary">Password</ion-label>
+              <ion-input name="user_Password" type="Password" spellcheck="false" [(ngModel)]="Password" autocapitalize="off" required>
+              </ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label position="floating" color="primary">Confirm Password</ion-label>
+                <ion-input name="user_Confirm_Password" type="Password" spellcheck="false" [(ngModel)]="Confirm_Password" autocapitalize="off" required>
+                </ion-input>
+              </ion-item>
+
+          </ion-list>
+      
+          <ion-button  shape="round" expand="block" (click)="register()">
+            <ion-ripple-effect></ion-ripple-effect> Submit
+          </ion-button>
+
+          <!-- <ion-button class="mt-30" fill="clear" size="small"  expand="full" routerLink="/auth-forgot-password">
+            <ion-ripple-effect></ion-ripple-effect> FORGOT PASSWORD?
+          </ion-button>
+      
+          <ion-button fill="clear" size="small"  expand="full" routerLink="/auth-login" >
+            <ion-ripple-effect></ion-ripple-effect> LOGIN
+          </ion-button> -->
+      
+    
+      </div>
+</ion-content>

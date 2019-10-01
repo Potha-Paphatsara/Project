@@ -1,0 +1,59 @@
+//-----------------
+ion-header{
+    ion-toolbar{
+        ion-back-button{
+            --color:var(--ion-color-primary-contrast);
+        }
+    }
+}
+//-----------------
+
+.clockIcon{ ion-icon{ font-size: 5.5rem; color:#CCC; }  }
+ion-list{
+    background: #fff;
+    margin:10px;     width: calc(100% - 20px);
+
+
+            padding:0px;
+            ion-radio{ 
+                border:var(--ion-color-primary) 1px solid; 
+                width: 40px;
+                height: 40px;
+                border-radius: 50px;
+                margin-top: 12px;
+            }
+}
+
+
+
+
+ion-footer{
+    ion-toolbar{
+        --padding-top:0px;
+        --padding-bottom:0px;
+        --padding-start:0px;
+        --padding-end: 0px;
+    }
+    ion-row{
+        ion-col{
+            margin:0;
+            padding: 0;
+            h3{
+                font-size: 12px;
+                line-height: 0.2;
+            }
+        }
+
+        ion-col:first-child{
+            padding:0 5px;
+        }
+
+        ion-col:last-child{
+            background: var(--ion-color-primary);
+            ion-button{
+                margin: 0px;
+                height: 50px;
+            }        
+        }
+    }
+}

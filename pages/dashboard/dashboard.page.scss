@@ -1,0 +1,61 @@
+.cart-circle{
+    position: absolute;
+    width:75px;
+    height: 35px;
+   // border-radius: 75px;
+    z-index: 9999;
+    margin: 0 auto;
+    left:0; right:0; 
+    bottom:16px;
+   // background-color: #f33b4f;
+    ion-fab-button{
+        position: absolute;
+        z-index: 999;
+        margin: auto;
+        left: 0;
+        right: 0;
+        bottom: 5px;
+        outline: none;
+    }
+    ion-badge{
+        position: absolute;
+        top: -25px;
+        right: 0px;
+        z-index: 999;
+        background: #ed1f24;
+        color: #fff;
+    }
+    
+}
+.cart-circle::before{
+    content: "";
+    position: absolute;;
+    width:75px;
+    height: 35px;
+    background: #fbf7f6;
+    // border-top-left-radius: 75px;
+    // border-bottom-left-radius: 75px;
+    left:0;
+
+    width: 50%;
+    height: 35px;
+    border-bottom-left-radius: 110px;
+    border-bottom: #ddd 1px solid;
+   // border-bottom-right-radius: 110px;
+}
+.cart-circle::after{
+    content: "";
+    position: absolute;;
+    width:50%;
+    height: 100%;
+    background: #fbf7f6;
+    border-bottom: #ddd 1px solid;
+    // border-top-right-radius: 75px;
+    // border-bottom-right-radius: 75px;
+    right: 0;
+
+    width: 50%;
+    height: 35px;
+   //@at-root border-bottom-left-radius: 110px;
+    border-bottom-right-radius: 110px;
+}

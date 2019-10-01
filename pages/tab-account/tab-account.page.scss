@@ -1,0 +1,394 @@
+ .avatar-box{
+    min-height: 230px;
+ }
+/* Main view */
+.view-main {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0px;
+    right: 0;
+    -webkit-transition: right 0.3s linear;
+    -moz-transition: right 0.3s linear;
+    -o-transition: right 0.3s linear;
+    transition: right 0.3s linear;
+  }
+  .view-main.deactive {
+    right: 30%;
+  }
+  .view-main .header-wrapp {
+    width: 100%;
+    height: 36%;
+    position: relative;
+    background: var(--ion-color-primary);
+  }
+  .view-main .header-wrapp .app-detail {
+    text-align: center;
+    padding: 5px 5px 5px;
+    color: #FFFFFF;
+    text-shadow: 0 0 15px var(--ion-color-primary);
+  }
+  .view-main .header-wrapp .app-detail img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 15px var(--ion-color-primary);
+    -moz-box-shadow: 0 0 15px var(--ion-color-primary);
+    box-shadow: 0 0 15px var(--ion-color-primary);
+    border: 3px solid var(--ion-color-primary-contrast);
+  }
+  .view-main .header-wrapp .app-detail .status {
+    font-size: 13px;
+  }
+  .view-main .header-wrapp .wave-wrapp {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0px;
+  }
+  .view-main .header-wrapp .wave-wrapp .wave {
+    display: block;
+    width: 100%;
+    margin: 0;
+    height: 50px;
+  }
+  .view-main .header-wrapp .wave-wrapp .wave .parallax > use {
+    -webkit-animation: move-forever 12s linear infinite;
+    -moz-animation: move-forever 12s linear infinite;
+    -o-animation: move-forever 12s linear infinite;
+    animation: move-forever 12s linear infinite;
+  }
+  .view-main .header-wrapp .wave-wrapp .wave .parallax > use:nth-child(1) {
+    -webkit-animation-delay: -2s;
+    -moz-animation-delay: -2s;
+    -o-animation-delay: -2s;
+    animation-delay: -2s;
+    -webkit-transform: translate(-110px, 0%);
+    -moz-transform: translate(-110px, 0%);
+    -o-transform: translate(-110px, 0%);
+    transform: translate(-110px, 0%);
+  }
+  .view-main .header-wrapp .wave-wrapp .wave .parallax > use:nth-child(2) {
+    -webkit-animation-delay: -2s;
+    -moz-animation-delay: -2s;
+    -o-animation-delay: -2s;
+    animation-delay: -2s;
+    -webkit-animation-duration: 7s;
+    -moz-animation-duration: 7s;
+    -o-animation-duration: 7s;
+    animation-duration: 7s;
+  }
+  .view-main .header-wrapp .wave-wrapp .wave .parallax > use:nth-child(3) {
+    -webkit-animation-delay: -4s;
+    -moz-animation-delay: -4s;
+    -o-animation-delay: -4s;
+    animation-delay: -4s;
+    -webkit-animation-duration: 4s;
+    -moz-animation-duration: 4s;
+    -o-animation-duration: 4s;
+    animation-duration: 4s;
+    -webkit-transform: translate(-65px, 0%);
+    -moz-transform: translate(-65px, 0%);
+    -o-transform: translate(-65px, 0%);
+    transform: translate(-65px, 0%);
+  }
+  .view-main .content-wrapp {
+    width: 100%;
+    height: 64%;
+    position: relative;
+  }
+  .view-main .content-wrapp .nav-group {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    box-shadow: 0px 3px 5px #cccccc;
+  }
+  .view-main .content-wrapp #master-nav {
+    text-align: center;
+    padding-top: 15px;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  .view-main .content-wrapp #master-nav ul {
+    list-style: none;
+    padding: 0px;
+    position: relative;
+  }
+  .view-main .content-wrapp #master-nav ul li {
+    display: inline-block;
+    width: 15%;
+    font-size: 20px;
+    padding: 5px 0;
+    margin: 0 13px;
+  }
+  .view-main .content-wrapp #master-nav ul li i {
+    color: #757575;
+    font-size: 20px;
+  }
+  .view-main .content-wrapp #master-nav ul li.active i {
+    color: #FFC107;
+  }
+  .view-main .content-wrapp #master-nav ul #active-line {
+    position: absolute;
+    bottom: -1px;
+    height: 2px;
+    background: #FFC107;
+    padding: 0px;
+    border-radius: 45px;
+    left: 0px;
+    -webkit-transition: width 0.5s;
+    -moz-transition: width 0.5s;
+    -o-transition: width 0.5s;
+    transition: width 0.5s;
+  }
+  .view-main .content-wrapp #master-nav-items {
+    position: absolute;
+    width: 100%;
+    top: 53px;
+    bottom: 0;
+  }
+  .view-main .content-wrapp #master-nav-items > div {
+    width: 100%;
+    height: auto;
+    position: relative;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    -webkit-transition: left 0.5s, opacity 0.4s;
+    -moz-transition: left 0.5s, opacity 0.4s;
+    -o-transition: left 0.5s, opacity 0.4s;
+    transition: left 0.5s, opacity 0.4s;
+  }
+  .view-main .content-wrapp #master-nav-items > div.active {
+    left: 0;
+    opacity: 1;
+  }
+  .view-main .content-wrapp #master-nav-items > div.after {
+    left: 100%;
+  }
+  .view-main .content-wrapp #master-nav-items > div.before {
+    left: -100%;
+  }
+  .view-main .content-wrapp .messages-list {
+    padding-top: 10px;
+  }
+  .view-main .content-wrapp .messages-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  .view-main .content-wrapp .messages-list ul > li {
+    width: 100%;
+    height: 75px;
+    overflow: hidden;
+    border-bottom: 1px solid #f2f2f2;
+  }
+  .view-main .content-wrapp .messages-list ul > li .sender-image {
+    width: 75px;
+    height: 75px;
+    float: left;
+    text-align: center;
+    padding-top: 8px;
+  }
+  .view-main .content-wrapp .messages-list ul > li .sender-image img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .view-main .content-wrapp .messages-list ul > li .mes-detail {
+    margin-left: 75px;
+    padding: 5px 15px 5px 5px;
+  }
+  .view-main .content-wrapp .messages-list ul > li .mes-detail .mes-col1 {
+    width: 65%;
+    float: left;
+    padding-right: 5px;
+  }
+  .view-main .content-wrapp .messages-list ul > li .mes-detail .mes-col1 .sender-name {
+    font-size: 13px;
+    font-weight: bold;
+    padding-bottom: 3px;
+  }
+  .view-main .content-wrapp .messages-list ul > li .mes-detail .mes-col1 .mes-preview {
+    font-size: 12px;
+    color: #757575;
+  }
+  .view-main .content-wrapp .messages-list ul > li .mes-detail .mes-col2 {
+    font-size: 12px;
+  }
+  .view-main .content-wrapp .messages-list ul > li .mes-detail .mes-col2 .send-time {
+    float: right;
+  }
+  .view-main .content-wrapp .messages-list ul > li .mes-detail .mes-col2 .mes-seen-status {
+    float: right;
+    color: #4CAF50;
+    position: relative;
+    top: -2px;
+    right: 5px;
+  }
+  .view-main .content-wrapp .messages-list ul > li .mes-detail .mes-col2 .mes-seen-status i {
+    font-size: 16px;
+  }
+  .view-main .content-wrapp .messages-list ul > li .mes-detail .mes-col2 .mes-count {
+    background: #FFC107;
+    padding: 1px 6px;
+    border-radius: 50px;
+    color: #FFFFFF;
+    float: right;
+    margin: 10px 0 0;
+    clear: right;
+  }
+  .view-main .content-wrapp .alphabet {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    font-size: 11px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 20px;
+    z-index: 1;
+  }
+  .view-main .content-wrapp .alphabet > div:after {
+    content: " ";
+    background: #FFA000;
+    width: 3px;
+    height: 3px;
+    position: relative;
+    display: flex;
+    margin: auto;
+    border-radius: 50%;
+  }
+  .view-main .content-wrapp .alphabet > div:last-child:after {
+    content: "";
+    display: none;
+  }
+  .view-main .content-wrapp .contact-list {
+    font-size: 14px;
+  }
+  .view-main .content-wrapp .contact-list ul {
+    list-style: none;
+  }
+  .view-main .content-wrapp .contact-list > ul {
+    padding-top: 5px;
+  }
+  .view-main .content-wrapp .contact-list > ul > li .title {
+    text-indent: 10px;
+    background: #f9f9f9;
+    color: #757575;
+    width: 100%;
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 9px 7px -8px #d9d9d9;
+  }
+  .view-main .content-wrapp .contact-list > ul > li ul {
+    padding-top: 20px;
+  }
+  .view-main .content-wrapp .contact-list > ul > li ul li {
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid #f5f5f5;
+    text-transform: capitalize;
+    font-size: 13px;
+  }
+  .view-main .content-wrapp .profile-setting .information {
+    padding-top: 5px;
+  }
+  .view-main .content-wrapp .profile-setting .information .private > p,
+  .view-main .content-wrapp .profile-setting .information .public > p {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 15px;
+    background: #f2f2f2;
+  }
+  .view-main .content-wrapp .activity {
+    text-align: center;
+    padding: 40px 5px 5px;
+    line-height: 40px;
+  }
+  .view-main .content-wrapp .activity i {
+    font-size: 60px;
+    color: #FFC107;
+  }
+
+
+  
+  /* Keyframes */
+  @-webkit-keyframes move-forever {
+    0% {
+      -webkit-transform: translate(-90px, 0%);
+      -moz-transform: translate(-90px, 0%);
+      -o-transform: translate(-90px, 0%);
+      transform: translate(-90px, 0%);
+    }
+    100% {
+      -webkit-transform: translate(85px, 0%);
+      -moz-transform: translate(85px, 0%);
+      -o-transform: translate(85px, 0%);
+      transform: translate(85px, 0%);
+    }
+  }
+  @-moz-keyframes move-forever {
+    0% {
+      -webkit-transform: translate(-90px, 0%);
+      -moz-transform: translate(-90px, 0%);
+      -o-transform: translate(-90px, 0%);
+      transform: translate(-90px, 0%);
+    }
+    100% {
+      -webkit-transform: translate(85px, 0%);
+      -moz-transform: translate(85px, 0%);
+      -o-transform: translate(85px, 0%);
+      transform: translate(85px, 0%);
+    }
+  }
+  @-ms-keyframes move-forever {
+    0% {
+      -webkit-transform: translate(-90px, 0%);
+      -moz-transform: translate(-90px, 0%);
+      -o-transform: translate(-90px, 0%);
+      transform: translate(-90px, 0%);
+    }
+    100% {
+      -webkit-transform: translate(85px, 0%);
+      -moz-transform: translate(85px, 0%);
+      -o-transform: translate(85px, 0%);
+      transform: translate(85px, 0%);
+    }
+  }
+  @-o-keyframes move-forever {
+    0% {
+      -webkit-transform: translate(-90px, 0%);
+      -moz-transform: translate(-90px, 0%);
+      -o-transform: translate(-90px, 0%);
+      transform: translate(-90px, 0%);
+    }
+    100% {
+      -webkit-transform: translate(85px, 0%);
+      -moz-transform: translate(85px, 0%);
+      -o-transform: translate(85px, 0%);
+      transform: translate(85px, 0%);
+    }
+  }
+  @keyframes move-forever {
+    0% {
+      -webkit-transform: translate(-90px, 0%);
+      -moz-transform: translate(-90px, 0%);
+      -o-transform: translate(-90px, 0%);
+      transform: translate(-90px, 0%);
+    }
+    100% {
+      -webkit-transform: translate(85px, 0%);
+      -moz-transform: translate(85px, 0%);
+      -o-transform: translate(85px, 0%);
+      transform: translate(85px, 0%);
+    }
+  }
+
+  //----------------
+  ion-header{
+      ion-toolbar{
+        --border-width: 0 0 0px;
+      }
+  }
+  fa-icon{
+      width:35px;
+  }

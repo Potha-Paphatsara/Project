@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-menu-button ></ion-menu-button>
+</ion-buttons>
+      <ion-title >Payment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+<ion-card>
+      <ion-card-content>
+        <ion-text color="danger">
+          <p>โอน/ชำระผ่านช่องทางธนาคาร</p>
+        </ion-text>
+        ธนาคาร : {{bank}}<br>
+        ชื่อบัญชี : {{account_name}}<br>
+        เลขบัญชี : {{account_number}}<br>
+        <br>
+        <ion-text color="danger">
+          <p>พร้อมเพย์</p>
+        </ion-text>
+        เลขพร้อมเพย์ : {{PromptPay}}<br>
+        ชื่อพร้อมเพย์ : {{PromptPay_name}}<br>
+        <br>
+        <ion-text color="danger">
+          <p>เก็บเงินปลายทาง</p>
+        </ion-text>
+        {{Cash_on_Delivery}}
+
+              <ion-row wrap>
+                  <ion-col size="6" >
+                      <ion-row>
+                              <ion-col>
+                                      <ion-fab-button size="small"   routerLink="/shop-payment-form" > <ion-icon name="md-create"></ion-icon> </ion-fab-button>
+                              </ion-col>
+                          </ion-row>
+                  </ion-col>
+              </ion-row>
+
+   </ion-card-content>
+</ion-card>

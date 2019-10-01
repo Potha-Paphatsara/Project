@@ -1,0 +1,63 @@
+<ion-header >
+    <!--เดียวเอาออก-->
+        <ion-toolbar color="primary">
+            <ion-buttons slot="start">
+                <ion-menu-button ></ion-menu-button>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+    
+    <ion-content>
+    <div class="avatar-box">
+        <div class="view-main">
+            <div class="header-wrapp">
+                    <div class="app-detail">
+                        <div>
+                            <img src="/assets/images/logo.png">
+                        </div>
+                        <div>{{name}}</div>
+                        <div class="status">{{email}}</div>
+                    </div>
+    
+                <div class="wave-wrapp">
+                    <svg class="wave"  viewBox="0 24 150 28"   preserveAspectRatio="none">
+                        <defs>
+                            <path id="gentle-wave" d="m -160,44.4 c 30,0 58,-18 87.7,-18 30.3,0 58.3,18 87.3,18 30,0 58,-18 88,-18 30,0 58,18 88,18 l 0,34.5 -351,0 z" />
+                        </defs>
+                        <g class="parallax">
+                            <use xlink:href="#gentle-wave" x="50" y="0" fill="rgba(255, 255, 255, 0.48)"/>
+                            <use xlink:href="#gentle-wave" x="50" y="3" fill="rgba(255, 255, 255, 0.78)"/>
+                            <use xlink:href="#gentle-wave" x="50" y="6" fill="rgba(255, 255, 255, 0.8)"/>  
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <!-- List of Sliding Items -->
+        <ion-list inset="true">
+            <ion-item routerLink="/cart-delivery-address">
+                <fa-icon [icon]="['fas', 'address-card']" ></fa-icon>
+                <ion-label>Delivery Address</ion-label>
+            </ion-item>
+            <ion-item routerLink="/user-change-password">
+                 <fa-icon [icon]="['fas', 'key']" ></fa-icon>
+                <ion-label>Change Password</ion-label>
+            </ion-item>
+            <ion-item routerLink="/menu/dashboard/tabs/account/notification-settings">
+                <fa-icon [icon]="['fas', 'bell']" ></fa-icon>
+                <ion-label>Notification Settings</ion-label>
+            </ion-item>
+            <!--<ion-item routerLink="/menu/dashboard/tabs/account/choose-language">
+                <fa-icon [icon]="['fas', 'language']" ></fa-icon>
+                <ion-label>Choose Language</ion-label>
+            </ion-item>-->
+            <ion-item (click)="logout()">
+                <fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon>
+                <ion-label>Logout</ion-label>
+            </ion-item>
+        </ion-list>
+    
+    </ion-content>
+    

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start" >
+          <ion-menu-button ></ion-menu-button>
+      </ion-buttons>
+      <ion-title >Previous Orders</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+    <ion-card  *ngFor="let obj of order_new" >
+      <div *ngIf="this.user.getUID() == obj.UID_customer" >
+        <div  [routerLink]="['/order',obj.Key_order]">
+          <ion-card-content padding>
+            <ion-row>
+              <ion-col text-left>สถานะอาหาร</ion-col>
+              <ion-col text-center>{{obj.Status}}</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col text-left>Order Date</ion-col>
+              <ion-col text-center>{{obj.Key_order}}</ion-col>
+            </ion-row>
+            <ion-row >
+              <ion-col text-left>การชำระเงิน</ion-col>
+              <ion-col text-center>{{obj.payment}}</ion-col>
+              <ion-col text-right>รอการชำระเงิน</ion-col>
+            </ion-row>
+          </ion-card-content>
+            <ion-row class="card-footer">
+              <ion-col text-left>Order Total</ion-col>
+               <ion-col text-right>${{obj.sum_total}}</ion-col>
+            </ion-row>
+          </div>
+        </div>
+
+      </ion-card>
+
+</ion-content>

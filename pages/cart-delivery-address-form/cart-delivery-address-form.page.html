@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start" >
+          <ion-back-button text="" icon="arrow-back"></ion-back-button>
+      </ion-buttons>
+      <ion-title >Address Form</ion-title>
+
+     <ion-buttons slot="end">
+        <ion-button fill="clear"  expend="block" (click)="close()" >
+          <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content padding>
+
+
+  <ion-list class="form">
+                     <ion-item>
+                       <ion-label position="floating" color="medium" >บ้านเลขที่</ion-label>
+                       <ion-input name="edit_House" type="text" [(ngModel)]="houseNumber"></ion-input>
+                     </ion-item>
+             
+                     <ion-item>
+                       <ion-label position="floating" color="medium" >ตำบล</ion-label>
+                       <ion-input name="edit_Address" type="text" [(ngModel)]="streetName"></ion-input>
+                     </ion-item>
+             
+                     <ion-item>
+                       <ion-label position="floating" color="medium" >อำเภอ</ion-label>
+                       <ion-input name="edit_District" type="text" [(ngModel)]="district"></ion-input>
+                     </ion-item>
+             
+                     <ion-item>
+                       <ion-label position="floating" color="medium" >จังหวัด</ion-label>
+                       <ion-input name="edit_City" type="text" [(ngModel)]="city"></ion-input>
+                     </ion-item>
+             
+                     <ion-item>
+                       <ion-label position="floating" color="medium" >เบอร์มือถือ</ion-label>
+                       <ion-input name="edit_Mobile" type="tel" [(ngModel)]="mobileNumber"></ion-input>
+                     </ion-item>
+                   
+   </ion-list> 
+            
+                 <div text-center>
+                    <ion-button expand="block" type="submit" (click)="writeNewPost()">SAVE</ion-button>
+                 </div>
+ 
+                
+</ion-content>

@@ -1,0 +1,67 @@
+ion-slides{
+    border-radius: 10px;
+    --bullet-background:#777777;
+    --bullet-background-active:#ec1a19;
+    margin-bottom:40px;
+    position: relative;
+    
+
+    .slider_layer_1{
+        background: #fff;
+        position: absolute;
+        width: 100%;
+        height: 75%;
+        z-index: -1;
+        top: 0;
+        border-radius: 10px;
+        box-shadow: 0 4px 16px rgba(0,0,0,.12);
+    }
+
+    .slider_layer_2{
+        background: #fff;
+        position: absolute;
+        width: 90%;
+        height: 25%;
+        z-index: 1;
+        bottom: 45px;
+        border-radius: 10px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        padding: 0 10px;
+        h5{ text-align: left; line-height:0;  }
+        .grey-text{ font-size:11px; text-align: left; color: #888; }
+
+        .offer_container{
+             display: inline-block;
+             border-top: #ccc 1px solid;
+             width: 100%;
+             text-align: left;
+            .offer_1{
+                font-size: 11px;
+                color: #ee3439;
+                background: url(/assets/images/star_icon.png);
+                background-repeat: no-repeat;
+                padding: 2px 0 5px 20px;
+                background-size: 16px;
+                margin-top: 0px;
+                display: inline-block;
+                margin-right:10px;
+                background-position: 0px -1px;
+                span{
+                    color:#aaa;
+                }
+            }
+            .offer_2{
+                font-size: 11px;
+                color: #ee3439;
+                background: url(/assets/images/discount_icon.png);
+                background-repeat: no-repeat;
+                padding: 2px 0 5px 20px;
+                background-size: 16px;
+               
+                margin-top: -8px;
+                display: inline-block;
+            }
+        }
+       
+    }
+}

@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start" >
+            <ion-back-button text="" icon="arrow-back"></ion-back-button>
+        </ion-buttons>
+        <ion-title >Payment</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content >
+            <ion-list lines="none">
+                <ion-list-header>Discount on Coupon</ion-list-header>
+                <ion-item>
+                    <ion-input type="text" placeholder="coupon code"></ion-input>
+                    <ion-button size="small" color="primary" item-right>REDEEM</ion-button>
+                </ion-item>
+            </ion-list>
+
+        <ion-list class="mt-20" lines="none">
+                <ion-list-header>Payment Summary</ion-list-header>
+                <ion-item>
+                        <ion-label>Sub Total</ion-label>
+                        <h3 slot="end">{{cartData.subTotal | formattedPrice}}</h3>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Discount</ion-label>
+                    <h3 slot="end" >(-) {{cartData.discount.amount | formattedPrice}}</h3>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Delivery Charges</ion-label>
+                    <h3 slot="end" >(+) {{cartData.deliveryMethod.amount | formattedPrice}}</h3>
+                </ion-item>
+                <ion-item>
+                        <ion-label>Tax</ion-label>
+                    <h3 slot="end" >(+) {{cartData.taxes.amount | formattedPrice}}</h3>
+                </ion-item>
+                <ion-item class="orderTotal">
+                        <ion-label>Total</ion-label>
+                    <h3 slot="end" >{{cartData.grossTotal | formattedPrice}}</h3>
+                </ion-item>
+            </ion-list>
+
+            <ion-list class="mt-20" lines="none">
+                <ion-list-header>MODE OF PAYMENT</ion-list-header>
+                <ion-item *ngFor="let obj of paymentOptions">
+                    <ion-label>{{obj.type}}</ion-label>
+                    <ion-radio value="{{obj.id}}" checked="{{cartData.paymentMethod.id==obj.id ? ture : false}}" (ionSelect)="setPaymentMethod(obj)" ></ion-radio>
+                </ion-item>
+            </ion-list>
+</ion-content>
+<ion-footer *ngIf="cartService.cartItemsTotal>0">
+  <ion-toolbar>
+          <ion-row>
+              <ion-col >
+                      <ion-button (click)="moveNext()" expand="full" >Pay Now</ion-button>
+              </ion-col>
+          </ion-row>
+  </ion-toolbar>
+</ion-footer>

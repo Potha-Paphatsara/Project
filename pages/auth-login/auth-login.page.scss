@@ -1,0 +1,35 @@
+ion-header{
+    .header-md:after {
+        background-image:unset;
+    }
+}
+
+ion-content{
+    .shadow-img{
+        background: url('/assets/images/login-shadow.jpg');
+        height: 100px;
+        background-size: 100% 50%;
+        border-top: #ccc 1px solid;
+    }
+
+    ion-button{
+        min-height: 40px;
+        span{
+            color:var(--ion-color-dark);
+            margin-right:10px;
+        }
+    }
+
+    .facebook{
+        color:#1d4c9a;
+    }
+
+    .google-plus{
+        color:#a52728;
+    }
+
+}
+
+ion-footer{
+    margin-bottom: -4px;
+}

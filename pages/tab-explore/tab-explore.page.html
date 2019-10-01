@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-toolbar>
+        
+        <ion-title >Explore</ion-title>
+    </ion-toolbar>
+    <ion-searchbar></ion-searchbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card *ngFor="let obj of data">
+        <ion-card-header>
+            <img src="{{obj.img}}">
+        </ion-card-header>
+
+        <ion-card-content>
+                {{obj.desc}}
+        </ion-card-content>
+    </ion-card>
+</ion-content>

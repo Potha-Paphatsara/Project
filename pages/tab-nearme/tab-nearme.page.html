@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+             <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+       
+        <ion-buttons slot="end">
+            <ion-button   routerLink="/search">
+                <ion-icon slot="icon-only" name="ios-search"  ></ion-icon>
+            </ion-button>
+            <ion-button   routerLink="/cart-list">
+                <ion-badge *ngIf="cart.length > 0">{{ cart.length }}</ion-badge>
+                <ion-icon  slot="icon-only" name="cart"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+        <app-sliding-banners  *ngIf="!_isSkeleton" [data]="bannerData" ></app-sliding-banners>
+        <app-sliding-banners  [hidden]="!_isSkeleton"  isSkeleton="true" ></app-sliding-banners>
+
+
+    <div class="layered-paper" *ngFor="let obj of Allshops_new">
+        <ion-item lines="none">
+                <ion-avatar> <img [src]="obj.Picture" /></ion-avatar>
+
+                <label>
+                        <h2>{{obj.Name}}</h2>
+                        <p class="item_numbers">{{obj.Telephone}}</p>
+                </label>
+
+        </ion-item>
+      
+        <ion-fab-button class="right-btn" [routerLink]="['/product-list',obj.UID]">
+                <fa-icon icon="hand-point-right" [routerLink]="['/product-list',obj.UID]" size="2x"></fa-icon>
+        </ion-fab-button>
+</div>
+
+
+</ion-content>

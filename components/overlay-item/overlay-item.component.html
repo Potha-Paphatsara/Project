@@ -1,0 +1,73 @@
+<div *ngIf="!_isSkeleton" class="custom-item" >
+    <ion-card>
+        <ion-card-content>
+          <ion-item lines="none">
+              <h2 slot="start">{{_obj.rec_title}}</h2>
+                <ion-chip slot="end" class="price-chip" >
+                     <ion-label>${{_obj.rec_sale_price}}</ion-label>
+                </ion-chip>
+          </ion-item>
+
+            <ion-row>
+                <ion-col size="6">
+                      <img src="{{_obj.rec_img}}" >
+                </ion-col>
+                <ion-col class="text-right" size="6">
+                    <ion-chip class="stripe-price-chip" >
+                        <ion-label>${{_obj.rec_price}}</ion-label>
+                    </ion-chip>
+                    <div class="btn-box">
+                        <ion-button  shape="round" *ngIf="_obj.display.qty<1" (click)="addToCart(_obj,_obj.display.indx);" >Add To Cart</ion-button>      
+                        <div class="cart-btn-v" *ngIf="_obj.display.qty>0">
+                                <ion-fab-button size="small" (click)="LessOneItem(_obj,_obj.display.indx);" > <ion-icon name="remove"></ion-icon> </ion-fab-button>
+                                <ion-input type="number" [(ngModel)]="_obj.display.qty"></ion-input>
+                                <ion-fab-button size="small" (click)="addToCart(_obj,_obj.display.indx);" > <ion-icon name="add"></ion-icon> </ion-fab-button>
+                        </div>
+                    </div>    
+                </ion-col>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
+
+    <div class="addon_layer">
+        <h5>{{_addon_title}}</h5>
+        <p class="grey-text ion-text-nowrap">{{_obj.addon_sub_title}}</p>
+        <div class="offer_container ion-text-nowrap">
+                <p class="offer_1 ion-text-nowrap">{{_obj.addon_rating}} <span>({{_obj.addon_reviews}})</span></p>
+                <p class="offer_2 ion-text-nowrap">{{_obj.addon_discount}}</p>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="_isSkeleton" class="custom-item" >
+    <ion-card>
+        <ion-card-content>
+          <ion-item lines="none">
+              <h2 slot="start"><ion-skeleton-text animated style="width: 165px;"></ion-skeleton-text></h2>
+              <ion-skeleton-text slot="end" animated style="border-radius:20px;max-width:90px; padding:13px;"></ion-skeleton-text>
+          </ion-item>
+
+            <ion-row>
+                <ion-col>
+                    <ion-skeleton-text  animated style="width: 100%; height: 150px; "></ion-skeleton-text>
+                </ion-col>
+                <ion-col>
+                <div class="mt-25">
+                    <ion-skeleton-text animated style="width: 90%; padding: 20px; border-radius: 25px;"></ion-skeleton-text>
+                </div>    
+                </ion-col>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
+
+    <div class="addon_layer">
+        <h5><ion-skeleton-text animated style="width: 100%;"></ion-skeleton-text></h5>
+        <p class="grey-text"><ion-skeleton-text animated style="width: 80%;"></ion-skeleton-text></p>
+        <div class="offer_container">
+            <ion-skeleton-text animated style="width:20px;margin-right:5px;display:inline-block;"></ion-skeleton-text> 
+            <ion-skeleton-text animated style="width:20px;margin-right:5px;display:inline-block;"></ion-skeleton-text>
+            <ion-skeleton-text animated style="width:100px;display:inline-block;"></ion-skeleton-text>
+        </div>
+    </div>
+</div>

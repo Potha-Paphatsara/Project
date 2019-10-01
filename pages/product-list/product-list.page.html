@@ -1,0 +1,97 @@
+<ion-header>
+        <ion-toolbar>
+            <ion-buttons slot="start" >
+                <ion-back-button  text="" icon="arrow-back"></ion-back-button>
+            </ion-buttons>
+            
+            <ion-buttons slot="end">
+            <ion-button   routerLink="/search">
+                <ion-icon slot="icon-only" name="ios-search"  ></ion-icon>
+            </ion-button>
+            <ion-button   routerLink="/cart-list">
+                <ion-badge *ngIf="cart.length > 0">{{ cart.length }}</ion-badge>
+                <ion-icon  slot="icon-only" name="cart"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        </ion-toolbar>
+        
+        <div *ngFor="let item of Allshops_newData">
+                <div *ngIf="passedID==item.UID">
+                    <h1>{{item.Name}}</h1>
+            </div>
+        </div>
+        
+      </ion-header>
+
+<ion-content>
+    <div *ngFor="let item of Allshops_newData">
+        <div *ngIf="passedID==item.UID">
+            <div *ngFor="let obj of item.post">
+                <div *ngIf="!_isSkeleton" class="custom-item" >
+                    <ion-card>
+                        <ion-card-content>
+                            <ion-item lines="none">
+                                <h2 slot="start">{{obj.name_food}}</h2>
+                                    <ion-chip slot="end" class="price-chip" >
+                                        <ion-label>${{obj.price}}</ion-label>
+                                    </ion-chip>
+                            </ion-item>
+                
+                            <ion-row>
+                                <ion-col size="6">
+                                    <img *ngFor ="let images of obj.Picture" [src]="images" >
+                                </ion-col>
+                                <ion-col class="text-right" size="6">
+
+                                        <div class="btn-box">
+                                                <ion-button  shape="round"(click)="addToCart(obj)" >Add To Cart</ion-button>      
+
+                                            </div> 
+                                </ion-col>
+                            </ion-row>
+                        </ion-card-content>
+                    </ion-card>
+                <div class="addon_layer">
+                    <h5>{{obj.message}}</h5>
+                    <p class="grey-text ion-text-nowrap"  color="green">{{obj.Status}}</p>
+                    <div class="offer_container ion-text-nowrap">
+                            <p class="offer_1 ion-text-nowrap">0 <span>(0.0)</span></p>
+                    </div>
+                </div>
+                </div>
+                
+                
+                <div *ngIf="_isSkeleton" class="custom-item" >
+                    <ion-card>
+                        <ion-card-content>
+                        <ion-item lines="none">
+                            <h2 slot="start"><ion-skeleton-text animated style="width: 165px;"></ion-skeleton-text></h2>
+                            <ion-skeleton-text slot="end" animated style="border-radius:20px;max-width:90px; padding:13px;"></ion-skeleton-text>
+                        </ion-item>
+                
+                            <ion-row>
+                                <ion-col>
+                                    <ion-skeleton-text  animated style="width: 100%; height: 150px; "></ion-skeleton-text>
+                                </ion-col>
+                                <ion-col>
+                                <div class="mt-25">
+                                    <ion-skeleton-text animated style="width: 90%; padding: 20px; border-radius: 25px;"></ion-skeleton-text>
+                                </div>    
+                                </ion-col>
+                            </ion-row>
+                        </ion-card-content>
+                    </ion-card>
+                <div class="addon_layer">
+                    <h5><ion-skeleton-text animated style="width: 100%;"></ion-skeleton-text></h5>
+                    <p class="grey-text"><ion-skeleton-text animated style="width: 80%;"></ion-skeleton-text></p>
+                    <div class="offer_container">
+                        <ion-skeleton-text animated style="width:20px;margin-right:5px;display:inline-block;"></ion-skeleton-text> 
+                        <ion-skeleton-text animated style="width:20px;margin-right:5px;display:inline-block;"></ion-skeleton-text>
+                        <ion-skeleton-text animated style="width:100px;display:inline-block;"></ion-skeleton-text>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>

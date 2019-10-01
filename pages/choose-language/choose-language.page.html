@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons  slot="start">
+                <ion-back-button  text="" icon="arrow-back"></ion-back-button>
+        </ion-buttons>
+        <ion-title  >Choose Language</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+        <ion-list lines="none" >
+                <ion-radio-group>
+                <ion-item *ngFor="let obj of langData">
+                    <ion-label>{{obj.title}}</ion-label>
+                    <ion-radio slot="end" value="{{obj.id}}" checked="{{selctedLanguage==obj.id ? ture : false}}"></ion-radio>
+                </ion-item>
+                </ion-radio-group>
+            </ion-list>
+</ion-content>

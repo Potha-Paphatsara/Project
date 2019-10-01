@@ -1,0 +1,68 @@
+<ion-header>
+    <ion-row no-padding>
+        <ion-col no-padding size="6">
+            <ion-toolbar>
+                <ion-buttons slot="start" class="zoom-btn">
+                    <ion-back-button color="light" text="" icon="arrow-back"></ion-back-button>
+                </ion-buttons>
+                <div class="bg-bar size-2"></div>
+            </ion-toolbar>
+        </ion-col>
+        <ion-col no-padding>
+            <ion-toolbar color="light">
+                    <ion-img slot="end" class="logo" src="../assets/images/logo.png" ></ion-img>
+            </ion-toolbar>
+        </ion-col>
+
+    </ion-row>
+</ion-header>
+
+<ion-content padding>
+    <div class="bg-bar size-2"></div>
+
+    <h2 class="cat-title">{{pObj.rec_title}}</h2>
+    <div class="custom-item">
+        <ion-card>
+            <ion-card-header>
+                <ion-card-title>{{pObj.rec_title}}</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+                    <p>{{pObj.rec_desc}}</p>
+                           
+                    <div class="star-ratings">
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star-half"></ion-icon>
+                            <ion-icon name="star-outline"></ion-icon>
+                           
+                    </div>
+
+                    
+                <ion-row>
+                    <ion-col class="qty">Full</ion-col>
+                    <ion-col class="sale-price">{{pObj.rec_price | formattedPrice}}</ion-col>
+                </ion-row>
+
+        
+            </ion-card-content>
+        </ion-card>
+        <ion-fab-button class="left-btn" color="light" size="large">
+            <img src="{{pObj.rec_img}}" />
+        </ion-fab-button>
+
+        <ion-fab-button class="right-btn" *ngIf="pObj.display.qty<1" (click)="addToCart(pObj,pObj.display.indx);" >
+             <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+        <div class="cart-btn-v" *ngIf="pObj.display.qty>0">
+                <ion-fab-button size="small" (click)="LessOneItem(pObj,pObj.display.indx);" > <ion-icon name="remove"></ion-icon> </ion-fab-button>
+                <ion-input type="number" [(ngModel)]="pObj.display.qty"></ion-input>
+                <ion-fab-button size="small" (click)="addToCart(pObj,pObj.display.indx);" > <ion-icon name="add"></ion-icon> </ion-fab-button>
+        </div>
+       
+    </div>
+
+
+
+</ion-content>

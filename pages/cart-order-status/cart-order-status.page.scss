@@ -1,0 +1,21 @@
+//-----------------
+ion-header{
+    ion-toolbar{
+        ion-back-button{
+            --color:var(--ion-color-primary-contrast);
+        }
+    }
+}
+//-----------------
+
+ion-content{
+    ion-card-header{
+        font-size: 18px;
+    }
+    ion-card-content{
+        padding-top: 0px;
+    }
+    ion-item{
+        border-top:#ccc 1px solid;
+    }
+}

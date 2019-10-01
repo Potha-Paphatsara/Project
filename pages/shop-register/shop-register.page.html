@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start" >
+          <ion-back-button text="" icon="arrow-back"></ion-back-button>
+      </ion-buttons>
+    <ion-title>shop-register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="center-align-box">
+           
+        <ion-list>
+            <ion-item>
+                <ion-label position="floating" color="primary">ชื่อร้าน</ion-label>
+                <ion-input name="user_fullname" type="text" spellcheck="false" [(ngModel)]="Shop_Name" required>
+                </ion-input>
+           </ion-item>
+
+
+              
+                      <ion-item>
+                        <ion-label>ประเภทร้านอาหาร</ion-label>
+                        <ion-select name="restaurant_type" [(ngModel)]="restaurant_type">
+                          <ion-select-option value="มีหน้าร้าน">มีหน้าร้าน</ion-select-option>
+                          <ion-select-option value="ไม่มีหน้าร้าน">ไม่มีหน้าร้าน</ion-select-option>
+                        </ion-select>
+                      </ion-item>
+
+
+
+                      <ion-list class="form">
+                          <ion-item>
+                            <ion-label position="floating" color="medium" >บ้านเลขที่</ion-label>
+                            <ion-input name="edit_House" type="text" [(ngModel)]="houseNumber"></ion-input>
+                          </ion-item>
+                  
+                          <ion-item>
+                            <ion-label position="floating" color="medium" >ตำบล</ion-label>
+                            <ion-input name="edit_Address" type="text" [(ngModel)]="streetName"></ion-input>
+                          </ion-item>
+                  
+                          <ion-item>
+                            <ion-label position="floating" color="medium" >อำเภอ</ion-label>
+                            <ion-input name="edit_District" type="text" [(ngModel)]="district"></ion-input>
+                          </ion-item>
+                  
+                          <ion-item>
+                            <ion-label position="floating" color="medium" >จังหวัด</ion-label>
+                            <ion-input name="edit_City" type="text" [(ngModel)]="city"></ion-input>
+                          </ion-item>
+                  
+                          <ion-item>
+                            <ion-label position="floating" color="medium" >เบอร์มือถือ</ion-label>
+                            <ion-input name="edit_Mobile" type="tel" [(ngModel)]="mobileNumber"></ion-input>
+                          </ion-item>
+                        
+        </ion-list> 
+
+
+
+              
+
+          </ion-list>
+      
+          <ion-button  shape="round" expand="block" (click)="register()">
+            <ion-ripple-effect></ion-ripple-effect> Submit
+          </ion-button>
+
+          <!-- <ion-button class="mt-30" fill="clear" size="small"  expand="full" routerLink="/auth-forgot-password">
+            <ion-ripple-effect></ion-ripple-effect> FORGOT PASSWORD?
+          </ion-button>
+      
+          <ion-button fill="clear" size="small"  expand="full" routerLink="/auth-login" >
+            <ion-ripple-effect></ion-ripple-effect> LOGIN
+          </ion-button> -->
+      
+    
+      </div>
+</ion-content>

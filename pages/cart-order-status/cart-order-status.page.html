@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title >Order Confirmation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header text-center>Order Placed</ion-card-header>
+    <ion-card-content text-center>
+      Thanks for placing order
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>BILL DETAILS</ion-card-header>
+    <ion-card-content>
+      <ion-list lines="none">
+        <ion-item *ngFor="let cObj of cartData.products">
+          <ion-label>{{cObj.rec_title}} ({{cObj.display.qty}})</ion-label>
+          <h3 slot="end">{{cObj.display.sale_price | formattedPrice}}</h3>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Sub Total</ion-label>
+          <h3 slot="end">{{cartData.subTotal | formattedPrice}}</h3>
+        </ion-item>
+        <ion-item>
+          <ion-label>Discount</ion-label>
+          <h3 slot="end">(-) {{cartData.discount.amount | formattedPrice}}</h3>
+        </ion-item>
+        <ion-item>
+          <ion-label>Delivery Charges</ion-label>
+          <h3 slot="end">(+) {{cartData.deliveryMethod.amount | formattedPrice}}</h3>
+        </ion-item>
+        <ion-item>
+          <ion-label>Service Tax</ion-label>
+          <h3 slot="end">(+) {{cartData.taxes.amount | formattedPrice}}</h3>
+        </ion-item>
+        <ion-item>
+          <ion-label>Total Payable Amount</ion-label>
+          <h3 slot="end">{{cartData.grossTotal | formattedPrice}}</h3>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header text-uppercase>Delivery Address</ion-card-header>
+    <ion-card-content>
+      <ion-icon name="pin" item-left></ion-icon>
+      A-545 Main Street, United States 12345
+    </ion-card-content>
+  </ion-card>
+
+  <p padding>
+    <ion-button expand="block" (click)="continueShopping();">Continue Shopping</ion-button>
+  </p>
+</ion-content>

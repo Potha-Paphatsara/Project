@@ -1,0 +1,42 @@
+<ion-header mode="ios">
+  <img src="../../../assets/images/auth-bg.png" />
+  <ion-fab vertical="top"  horizontal="end" slot="fixed" routerLink="/menu/dashboard" >
+    <ion-fab-button class="skip-btn"> Skip</ion-fab-button>
+  </ion-fab>
+  <div class="left-pane" routerLink="/auth-login" ></div>
+  <div class="right-pane"  ></div>
+</ion-header>
+
+<ion-content padding>
+  <div class="center-align-box">
+      <p text-center class="mb-20">Login to get a personalized experience & quick checkout</p>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" fill="outline">
+          <ion-icon slot="start" name="logo-facebook"></ion-icon>FACEBOOK
+        </ion-button>
+
+      </ion-col>
+      <ion-col>
+        <ion-button expand="block" fill="outline">
+          <ion-icon slot="start" name="logo-google"></ion-icon>GOOGLE
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <p text-center class="mt-20 mb-60">- Or use email address -</p>
+
+    <ion-button expand="block" fill="outline" routerLink="/auth-register">
+      <ion-icon slot="start" name="mail"></ion-icon>EMIL ADDRESS
+    </ion-button>
+
+    <ion-button class="mt-30" fill="clear" size="small"  expand="full" routerLink="/auth-forgot-password">
+      <ion-ripple-effect></ion-ripple-effect> FORGOT PASSWORD?
+    </ion-button>
+
+    <!-- <ion-button fill="clear" size="small" class="text-right" expand="full" routerLink="/auth-login" >
+      <ion-ripple-effect></ion-ripple-effect> ALREADY HAVE AN ACCOUNT? LOGIN NOW
+    </ion-button> -->
+
+
+  </div>
+</ion-content>

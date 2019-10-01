@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+					<ion-back-button defaultHref="shop-profile"></ion-back-button>
+        </ion-buttons>
+    <ion-title>post-form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list class="form">
+        <button id="post-button37" style="color:rgb(255, 230, 0);" class="list"  (click)="Take_A_Photo()">take a photo</button>
+        <br>
+        <div class ="fille>">
+            <label class="file-label">
+              <input class ="file-input" type="file"  (change)= "handleInputChange($event)">
+               <span class ="file-cta">
+                <span class ="file-icon">
+                  <i class= "fa fa-upload"></i>
+                   </span>
+                 <span class= "file-label">                  
+               </span>
+             </span>
+            </label>
+          </div>
+
+
+                       <ion-item>
+                         <ion-label position="floating" color="medium" >ชื่ออาหาร</ion-label>
+                         <ion-input name="name_food" type="text" [(ngModel)]="name_food"></ion-input>
+                       </ion-item>
+               
+                       <ion-item>
+                         <ion-label position="floating" color="medium" >ราคา</ion-label>
+                         <ion-input name="price" type="number" [(ngModel)]="price"></ion-input>
+                       </ion-item>
+               
+                       <ion-item>
+                         <ion-label position="floating" color="medium" >จำนวนอาหาร</ion-label>
+                         <ion-input name="number_food" type="number" [(ngModel)]="number_food"></ion-input>
+                       </ion-item>
+               
+                       <ion-item>
+                         <ion-label position="floating" color="medium" >รายละเอียดอาหาร</ion-label>
+                         <ion-input name="edit_City" type="message" [(ngModel)]="message"></ion-input>
+                       </ion-item>
+               
+                       <ion-item>
+                          <ion-label>การให้บริการ</ion-label>
+                          <ion-select name="Status" [(ngModel)]="Status">
+                            <ion-select-option value="free delivery">free delivery</ion-select-option>
+                            <ion-select-option value="no delivery">no delivery</ion-select-option>
+                          </ion-select>
+                        </ion-item>
+                     
+     </ion-list> 
+              
+                   <div text-center>
+                      <ion-button expand="block" type="submit" (click)=" writeNewPost()">SAVE</ion-button>
+                   </div>
+
+</ion-content>

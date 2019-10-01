@@ -1,0 +1,46 @@
+<ion-header mode="ios">
+  <img src="/assets/images/login-header.jpg" />
+  <ion-fab vertical="top"  horizontal="end" slot="fixed" routerLink="/menu/dashboard" >
+     <ion-fab-button class="skip-btn"> Skip</ion-fab-button>
+ </ion-fab>
+</ion-header>
+
+<ion-content padding scrollY="true" >
+
+      <ion-list>
+      <ion-item>
+        <ion-label position="floating" color="primary">Email</ion-label>
+        <ion-input name="Email" type="text" spellcheck="false" [(ngModel)]="Email" autocapitalize="off" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" color="primary">Password</ion-label>
+        <ion-input name="user_password" type="password" [(ngModel)]="password" required>
+        </ion-input>
+      </ion-item>
+      </ion-list>
+
+    <ion-button shape="round" expand="block" (click)="login()">Log in</ion-button>
+
+    <ion-button margin fill="clear" size="small"  expand="full" routerLink="/auth-register">
+       <span>Don't have account?</span> REGISTER HERE
+    </ion-button>
+
+    <ion-item lines="none" class="shadow-img">
+        <ion-button slot="start" fill="clear" size="small"  expand="full" color="dark" routerLink="/auth-forgot-password">
+          <ion-ripple-effect></ion-ripple-effect> Forgot Password?
+        </ion-button>
+
+        <ion-button slot="end" fill="clear" size="small"  expand="full" (click)="loginface()" class="facebook" >
+          <fa-icon [icon]="['fab', 'facebook']" size="2x"></fa-icon>
+        </ion-button>
+      <!--<ion-button slot="end" fill="clear" size="small"  expand="full" class="google-plus" >
+          <fa-icon [icon]="['fab', 'google-plus']" size="2x"></fa-icon>
+        </ion-button>-->
+    </ion-item>
+
+
+</ion-content>
+
+<ion-footer><img src="/assets/images/login-footer.jpg" /></ion-footer>

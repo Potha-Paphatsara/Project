@@ -1,0 +1,50 @@
+ .card-header{
+            padding:0 5px; color:#ccc;
+            font-size: 1.3rem;; border-bottom: #f5f5f5  1px solid;
+            p{color:var(--ion-color-dark) ; font-size: 1.3rem;;}
+        }
+        .card-content{
+            .cartStatus {
+            background: #ccc none repeat scroll 0 0;
+            height: 1px;
+            margin: 30px 0px;
+            position: relative;
+            text-align: center;
+            width: 100%; }
+
+            .cartStatus span {
+            height: 40px;
+            width: 40px;
+            left: 50%;
+            position: absolute;
+            top: -20px;
+            border-radius: 30px;
+            border: #ccc 2px solid;
+            background: var(--ion-color-primary-contrast); }
+
+            .cartStatus span label {
+            font-size:1rem;
+            font-weight: bold;
+            position: absolute;
+            display: block;
+            width: 100px;
+            color:#ccc;
+            margin: 5px 0 0 -32px; }
+
+            .cartStatus span i {color: #ccc;padding-top:5px;display: block; }
+
+            .cartStatus span.active {border: var(--ion-color-primary) 2px solid; }
+            .cartStatus span.active i { color: var(--ion-color-primary); }
+            .cartStatus span.completed {  border: var(--ion-color-primary) 2px solid;
+            background: var(--ion-color-primary) none repeat scroll 0 0; }
+
+            .cartStatus span.completed label { color:var(--ion-color-primary-contrast); }
+            .cartStatus span.first { margin: 0 0 0 -47%; }
+            .cartStatus span.second { margin: 0 0 0 -7%; }
+            .cartStatus span.third { margin: 0 0 0 34%; }
+
+
+        }
+        .card-footer{
+        padding:5px; color:var(--ion-color-primary); border-top: #f5f5f5 1px solid;
+        }

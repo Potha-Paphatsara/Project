@@ -1,0 +1,31 @@
+<ion-slides *ngIf="!_isSkeleton"  loop="true" effect="fade" pager="true" >
+      <ion-slide  *ngFor="let obj of _data">
+              <div class="slider_layer_1"></div>
+              <div class="slider_layer_2">
+                  <h5>{{obj.addon_title}}</h5>
+                  <p class="grey-text">{{obj.addon_sub_title}}</p>
+                  <div class="offer_container">
+                          <p class="offer_1">{{obj.rating}} <span>({{obj.review}} )</span></p>
+                          <p class="offer_2">{{obj.offer}} </p>
+                  </div>
+              </div>
+            <img  src="{{obj.banner_img}}">
+    </ion-slide>
+</ion-slides>
+
+<ion-slides *ngIf="_isSkeleton" pager="false" effect="fade" pager="false" >
+    <ion-slide  >
+          <div class="slider_layer_1"></div>
+          <div class="slider_layer_2">
+              <h5><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></h5>
+              <p class="grey-text"><ion-skeleton-text animated style="width: 70%"></ion-skeleton-text></p>
+              <div class="offer_container">
+                  <ion-skeleton-text animated style="width:20px;margin-right:5px;display:inline-block;"></ion-skeleton-text> 
+                  <ion-skeleton-text animated style="width:20px;margin-right:5px;display:inline-block;"></ion-skeleton-text>
+                  <ion-skeleton-text animated style="width:100px;display:inline-block;"></ion-skeleton-text>
+              </div>
+          </div>
+          <ion-skeleton-text  animated style="width: 100%; height: 250px; margin: 0px 0 83px 0; border-radius: 10px;"></ion-skeleton-text>
+    </ion-slide>
+</ion-slides>
+

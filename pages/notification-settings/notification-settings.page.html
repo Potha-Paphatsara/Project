@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons  slot="start">
+                <ion-back-button  text="" icon="arrow-back"></ion-back-button>
+        </ion-buttons>
+        <ion-title  >Notification Settings</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div class="heading">
+         <h4>Shopping Offers</h4>
+        <p>Opt for our push notification to stay tuned to our incredible deals and promotions when you shop at Food Circle</p>
+    </div>
+    <ion-list lines="none">
+        <ion-item>
+            <ion-label>Send Notifications</ion-label>
+            <ion-toggle [(ngModel)]="isNotification" slot="end"></ion-toggle>
+        </ion-item>
+    </ion-list>
+</ion-content>

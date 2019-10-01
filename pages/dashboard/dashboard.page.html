@@ -1,0 +1,35 @@
+<ion-tabs>
+    <div *ngIf="isVisibaleCart" class="cart-circle">
+        <ion-fab-button (click)="restaurant()">
+          <ion-icon name="restaurant"></ion-icon>
+       </ion-fab-button>
+      
+    </div>
+    <!-- <div class="half-circle"></div> -->
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="nearme">
+      <fa-icon [icon]="['fas', 'home']" size="2x"></fa-icon>
+      <ion-label>Near Me</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button  tab="explore">
+      <fa-icon [icon]="['fas', 'map-marked-alt']" size="2x"></fa-icon>
+      <ion-label>Map</ion-label>
+    </ion-tab-button>
+    <ion-tab-button  >
+      </ion-tab-button>
+
+    <ion-tab-button (click)="orders()">
+      <fa-icon [icon]="['fas', 'stopwatch']" size="2x"></fa-icon>
+      <ion-label>Orders</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="Account()">
+      <fa-icon [icon]="['fas', 'user-circle']" size="2x"></fa-icon>
+      <ion-label>Account</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>
+
+
